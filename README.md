@@ -23,7 +23,7 @@ Install directly from Git with Bun:
 bun add github:tscircuit/pad-junction-simplifier
 ```
 
-Pin a commit in applications for reproducible builds. Bun consumes the TypeScript source directly, so a Git install needs no build hook or trusted lifecycle script. The package is not yet published to npm.
+Pin a commit in applications for reproducible builds. Bun and TypeScript-aware bundlers consume the source directly, matching the other tscircuit solver packages. A Git install needs no build hook or trusted lifecycle script. The package is not yet published to npm.
 
 ```ts
 import { ConnectivityMap } from "circuit-json-to-connectivity-map"
@@ -91,6 +91,6 @@ bun run typecheck
 bun run build
 ```
 
-The build produces ESM and TypeScript declarations in `dist/`. Bun and TypeScript use the source entry. Packed releases include the source and compiled ESM; the `prepack` script builds the ESM entry for Node consumers. CI runs tests, type checking, and the build. Generated videos and large artifacts stay outside Git.
+The build produces ESM and TypeScript declarations in `dist/`. Package exports point to TypeScript source. Packed releases also include compiled ESM in `dist/`; `prepack` builds these artifacts. Applications targeting Node should bundle the source or use the compiled build. CI runs tests, type checking, and the build. Generated videos and large artifacts stay outside Git.
 
 MIT licensed.

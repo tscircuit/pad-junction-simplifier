@@ -4,14 +4,13 @@
   "description": "Direct V-to-T pad junction simplification for PCB routes",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./lib/index.ts",
+  "module": "./lib/index.ts",
   "types": "./lib/index.ts",
   "exports": {
     ".": {
       "types": "./lib/index.ts",
-      "bun": "./lib/index.ts",
-      "import": "./dist/index.js"
+      "import": "./lib/index.ts"
     }
   },
   "files": [

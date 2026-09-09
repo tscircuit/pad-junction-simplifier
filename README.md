@@ -1,5 +1,9 @@
 # Pad junction simplifier
 
+
+https://github.com/user-attachments/assets/39d29360-b84e-4c01-bb6f-d423d36cb364
+
+
 `@tscircuit/pad-junction-simplifier` replaces two same-net routes converging at a rectangular PCB pad with a straight head and a shared perpendicular stem. It supports the V case through direct geometry, without a routing search.
 
 ```text

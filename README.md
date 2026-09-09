@@ -17,6 +17,14 @@ The gap between the head's copper edge and the pad edge is at least half the tra
 
 ## Usage
 
+Install directly from Git with Bun:
+
+```sh
+bun add github:tscircuit/pad-junction-simplifier
+```
+
+Pin a commit in applications for reproducible builds. Bun consumes the TypeScript source directly, so a Git install needs no build hook or trusted lifecycle script. The package is not yet published to npm.
+
 ```ts
 import { ConnectivityMap } from "circuit-json-to-connectivity-map"
 import {
@@ -83,6 +91,6 @@ bun run typecheck
 bun run build
 ```
 
-The build produces ESM and TypeScript declarations in `dist/`. The `prepare` script builds the package when installed from Git; consumers can pin an immutable commit. CI runs tests, type checking, and the build. Generated videos and large artifacts stay outside Git.
+The build produces ESM and TypeScript declarations in `dist/`. Bun and TypeScript use the source entry. Packed releases include the source and compiled ESM; the `prepack` script builds the ESM entry for Node consumers. CI runs tests, type checking, and the build. Generated videos and large artifacts stay outside Git.
 
 MIT licensed.

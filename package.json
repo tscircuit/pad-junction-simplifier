@@ -6,14 +6,16 @@
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./lib/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./lib/index.ts",
+      "bun": "./lib/index.ts",
       "import": "./dist/index.js"
     }
   },
   "files": [
+    "lib",
     "dist"
   ],
   "sideEffects": false,
@@ -33,7 +35,7 @@
     "test": "bun test --timeout 9999999",
     "typecheck": "tsc --noEmit",
     "build": "tsup lib/index.ts --format esm --dts --sourcemap --clean",
-    "prepare": "bun run build"
+    "prepack": "bun run build"
   },
   "dependencies": {
     "@tscircuit/math-utils": "^0.0.36",
